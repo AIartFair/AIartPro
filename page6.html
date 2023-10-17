@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Art Pro</title>
+    <style>
+    .neumorphic-link-button {
+        background-color: white;
+        border: none;
+        color: red;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff; /* Inner and outer shadows */
+        transition: box-shadow 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        top: 2000px;
+        
+    }
+    .neumorphic-link-button.clicked {
+        color: grey;
+        transition: color 10s ease; /* Delay the text color change for 10 seconds */
+    }
 
+    .neumorphic-link-button:hover {
+        box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff; /* Adjust shadows on hover */
+    }
+
+    /* Hide the button initially */
+    .neumorphic-link-button.hidden {
+        display: none;
+    }
+        /* Hide the button initially */
+    .neumorphic-link-button.hidden {
+        display: none;
+    }
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0), teal), linear-gradient(to right, rgba(255,0,100,.3), rgba(255,100,127,.2)), linear-gradient(to top right, yellow, rgba(0,0,0,0)), radial-gradient(closest-corner at 20% 80%, yellow, red);
+            background-attachment: fixed;
+        }
+
+        /* Define styles for the 3D card container */
+        .card-container {
+            perspective: 1000px;
+            width: 300px;
+            height: 200px;
+            margin: 20px auto; /* Adjust margin between cards and center horizontally */
+            padding: 20px; /* Add padding around the card container */
+        }
+
+        /* Define styles for the card */
+        .card {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff2ae0, #645bf6);
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg); /* No rotation */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid #FFD700; /* Golden border color */
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+            position: relative; /* Add relative positioning for child elements */
+        }
+
+        /* Style the content within the card */
+        .card-content {
+            padding: 20px;
+        }
+
+        /* Define styles for text within the card */
+        .card-text {
+            font-size: 16px;
+            color: white;
+        }
+
+        /* Define styles for the image */
+        .image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+        }
+
+        .image {
+            max-width: 100%; /* Make the image responsive to its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .dimmed-light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 0, 0) 0%, rgba(255, 255, 0, 0.8) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1) 100%);
+            opacity: 0;
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5; /* Increased intensity */
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .content {
+            position: absolute;
+            top: 250px;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Clear float */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dimmed light effect -->
+    <div class="dimmed-light"></div>
+
+    <!-- Your page content goes here -->
+    <div class="content">
+        <div class="card-container" data-index="1">
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-text"><i><font size="5">Sketch:</font><br>
+Stunning gorgeous female model, sketch,in beautiful full dress, beautiful hands</p>
+                    <!-- Container for the image -->
+                    <div class="image-container">
+                        <!-- Image to be revealed -->
+                        <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696592646/qt0iei6rfpsjzmn1t1d0.jpg" alt="Revealed Image 1" class="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-container" data-index="2">
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-text"><font size="5">Comic:</font>
+                    <br>ultra details faces female male stunning gorgeous lovers at phone booth location,Charlton romantic comic style,UHD, perfect, accurate ultra details, colorful, romantic,</p>
+                    <!-- Container for the image -->
+                    <div class="image-container">
+                        <!-- Image to be revealed -->
+                        <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696592703/njly95fircgtejbjxv1v.jpg" alt="Revealed Image 2" class="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+               <div class="card-container" data-index="2">
+        <div class="card">
+            <div class="card-content">
+                <p class="card-text"><font size="5">Asset:</font><br>Coffee Maker machine stunning gorgeous, Ambtient light, perfect,UHD, ultra details, realistic,
+</p>
+                <!-- Container for the image -->
+                <div class="image-container">
+                    <!-- Image to be revealed -->
+                    <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696592821/cbei2mids04vud9jkn1b.jpg" alt="Revealed Image 2" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="card-container" data-index="2">
+        <div class="card">
+            <div class="card-content">
+                <p class="card-text"><font size="5">Realistic:</font><br>
+Stunning gorgeous female model,</p>
+                <!-- Container for the image -->
+                <div class="image-container">
+                    <!-- Image to be revealed -->
+                    <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696593245/papcyyq5if5wawetumjs.jpg" alt="Revealed Image 2" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="card-container" data-index="2">
+        <div class="card">
+            <div class="card-content">
+                <p class="card-text"><font size="5">Colorful:</font><br>
+PaintMagic Stunning Gorgeous background, magic,8K,ultra soft, perfect, ,ambitient light ,road, perfect,</p>
+                <!-- Container for the image -->
+                <div class="image-container">
+                    <!-- Image to be revealed -->
+                    <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696593015/svm4ydtrndilhbv0b76k.jpg" alt="Revealed Image 2" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="card-container" data-index="2">
+        <div class="card">
+            <div class="card-content">
+                <p class="card-text"><font size="5">Sci-Fi:</font>
+              <br>  Stunning gorgeous sci-fi urban, perfect,UHD,3D perspective,
+</p>
+                <!-- Container for the image -->
+                <div class="image-container">
+                    <!-- Image to be revealed -->
+                    <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696593127/yp5vppzsirif3dhwerh8.jpg" alt="Revealed Image 2" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="card-container" data-index="2">
+        <div class="card">
+            <div class="card-content">
+                <p class="card-text"><font size="5">Anime:</font><br>Stunning gorgeous Anime girl, Perfect,UHD</i></p>
+                <!-- Container for the image -->
+                <div class="image-container">
+                    <!-- Image to be revealed -->
+                    <img src="https://res.cloudinary.com/dgzvw3flt/image/upload/v1696593175/phdnb3jtmo2ph9viyywk.jpg" alt="Revealed Image 2" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Repeat the card structure for additional images -->
+        <div class="clearfix"></div>
+    </div>
+    <script>
+        // JavaScript to toggle the image visibility on tap (touch event)
+        const cardContainers = document.querySelectorAll(".card-container");
+
+        cardContainers.forEach((container) => {
+            container.addEventListener("click", () => {
+                // Hide previously revealed images
+                cardContainers.forEach((otherContainer) => {
+                    if (otherContainer !== container) {
+                        const otherImageContainer = otherContainer.querySelector(".image-container");
+                        otherImageContainer.style.opacity = "0";
+                    }
+                });
+
+                // Toggle the opacity of the image container
+                const imageContainer = container.querySelector(".image-container");
+                if (imageContainer.style.opacity === "0") {
+                    imageContainer.style.opacity = "1";
+                } else {
+                    imageContainer.style.opacity = "0";
+                }
+            });
+        });
+    </script>
+     <script>
+    setTimeout(() => {
+        const neumorphicLinkButton = document.createElement("a");
+        neumorphicLinkButton.href = "page7.html";
+        neumorphicLinkButton.className = "neumorphic-link-button";
+        neumorphicLinkButton.id = "neumorphicLinkButton";
+        neumorphicLinkButton.textContent = "Do you like it?";
+
+        document.body.appendChild(neumorphicLinkButton);
+
+        // Add click functionality
+        neumorphicLinkButton.addEventListener("click", () => {
+            neumorphicLinkButton.classList.add("clicked");
+            setTimeout(() => {
+                neumorphicLinkButton.classList.remove("clicked");
+            }, 10000); // 10 seconds in milliseconds
+        });
+    }, 0); // 1 minute in milliseconds
+</script>
+</body>
+  </html>
+  
