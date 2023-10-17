@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Art Pro - Text to Image Generator</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+    <style>
+        /* Add your CSS styles for the landing page here */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff2ae0, #645bf6);
+            background-size: 10px;
+            font-family: Arial, sans-serif;
+        }
 
+        .glass-container {
+            text-align: center;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for Lottie Animation */
+        .animation-container {
+            width: 320px;
+            height: 320px;
+            margin: 0 auto;
+        }
+
+        /* Style for Heading and Description */
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        /* Style for Call to Action Button */
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <!-- Lottie Animation -->
+        <div class="animation-container">
+            <lottie-player
+                autoplay
+                loop
+                mode="normal"
+                src="https://lottie.host/37dc10e5-1462-4b8e-9fd4-25380f86832e/J38XnRa44n.json"
+            ></lottie-player>
+        </div>
+
+        <!-- Heading and Description -->
+        <h1 style="color:white;">Welcome to AI Art Pro</h1>
+        <p style="color:white;">A Text to Image Generator</p>
+
+        <!-- Call to Action Button -->
+        <button ><a style="color:white;"href="page2.html">Let's Go !!</a></button>
+    </div>
+
+<script>
+    // Function to scroll down smoothly
+    function scrollDown() {
+        const scrollTarget = document.getElementById("scroll-target");
+        const scrollPosition = scrollTarget.getBoundingClientRect().top + window.scrollY;
+        
+        window.scrollTo({
+            top: scrollPosition,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+    <!-- Empty div as a scroll target -->
+    <div id="scroll-target"></div>
+</body>
+  </html>
+  
