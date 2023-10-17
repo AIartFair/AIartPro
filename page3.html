@@ -1,1 +1,155 @@
+<!DOCTYPE html>
 
+<html lang="en">
+ 
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>AI Art Pro</title>
+ 
+
+    <!-- Import style.css from root directory -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<style>
+    body {
+
+    background-color: #FFD464;
+
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell,
+
+        'Open Sans', 'Helvetica Neue', sans-serif;
+        
+ 
+}
+ 
+.text-slider-items {
+
+    display: none;
+}
+ 
+.heading {
+
+    margin-top: 200px;
+
+    text-align: center;
+}
+ 
+
+.heading h1 {
+
+    color: limegreen;
+
+    font-size: 70px;
+}
+ 
+
+#siz {
+
+    color: black;
+
+    font-size: 50px;
+    
+}
+
+div.ty {
+    
+     position:relative;
+
+ top: 80px;
+ 
+}
+
+button.my {
+         position:absolute;
+
+ top: 400px;
+ bottom: 10px;
+}
+.neumorphic-link-button {
+        background-color: white;
+        border: none;
+        color: red;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff; /* Inner and outer shadows */
+        transition: box-shadow 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        top: 350px;
+        bottom: 10px;
+    }
+
+    .neumorphic-link-button.clicked {
+        color: grey;
+        transition: color 10s ease; /* Delay the text color change for 10 seconds */
+    }
+
+    .neumorphic-link-button:hover {
+        box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff; /* Adjust shadows on hover */
+    }
+
+    /* Hide the button initially */
+    .neumorphic-link-button.hidden {
+        display: none;
+    }
+        /* Hide the button initially */
+    .neumorphic-link-button.hidden {
+        display: none;
+    }
+</style>
+</head>
+
+
+<body>
+
+  <!-- Element to contain animated typing
+  -->
+  <div class="ty">
+        <span id="siz"></span>
+
+
+  </div>
+      
+  <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#siz', {
+      strings: ['With our two unlimited plans','no restrictions on generation  ','no credits system','Plans are:','Weekly Plan '
+,'&amp; Monthly Plan','With affordable price'],
+      typeSpeed: 100,
+    });
+  </script>
+  <script>
+    setTimeout(() => {
+        const neumorphicLinkButton = document.createElement("a");
+        neumorphicLinkButton.href = "page4.html";
+        neumorphicLinkButton.className = "neumorphic-link-button";
+        neumorphicLinkButton.id = "neumorphicLinkButton";
+        neumorphicLinkButton.textContent = "Excited about price?";
+
+        document.body.appendChild(neumorphicLinkButton);
+
+        // Add click functionality
+        neumorphicLinkButton.addEventListener("click", () => {
+            neumorphicLinkButton.classList.add("clicked");
+            setTimeout(() => {
+                neumorphicLinkButton.classList.remove("clicked");
+            }, 10000); // 10 seconds in milliseconds
+        });
+    }, 26000); // 1 minute in milliseconds
+</script>
+</body>
+     
+
+
+  </html>
+  
